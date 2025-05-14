@@ -88,7 +88,7 @@ You will not be given the Flame.
 You must become worthy of it.
 ```
 
-Then go to `http://localhost:3000` and enter the arena.
+
 
 ---
 
