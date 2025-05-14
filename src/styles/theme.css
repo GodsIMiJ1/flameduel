@@ -1,0 +1,102 @@
+:root {
+  /* Base colors */
+  --color-background: #0a0a0a;
+  --color-foreground: #f9f9f9;
+  
+  /* Primary colors */
+  --color-primary: #ff3a3a;
+  --color-primary-foreground: #000000;
+  
+  /* Secondary colors */
+  --color-secondary: #9333ea;
+  --color-secondary-foreground: #ffffff;
+  
+  /* Accent colors */
+  --color-accent: #00ffff;
+  --color-accent-foreground: #000000;
+  
+  /* Border colors */
+  --color-border: rgba(255, 58, 58, 0.5);
+  
+  /* Shadow colors */
+  --color-shadow: rgba(147, 51, 234, 0.2);
+  
+  /* Animation durations */
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+  
+  /* Glow effects */
+  --glow-primary: 0 0 10px rgba(255, 58, 58, 0.5);
+  --glow-secondary: 0 0 10px rgba(147, 51, 234, 0.5);
+  --glow-accent: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+/* Dark theme overrides (default) */
+.dark {
+  --color-background: #0a0a0a;
+  --color-foreground: #f9f9f9;
+}
+
+/* Light theme overrides */
+.light {
+  --color-background: #f0f0f0;
+  --color-foreground: #0a0a0a;
+  --color-primary: #cc0000;
+  --color-secondary: #7928ca;
+  --color-border: rgba(204, 0, 0, 0.5);
+  --color-shadow: rgba(121, 40, 202, 0.2);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-secondary);
+}
+
+/* Animations */
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 5px var(--color-primary); }
+  50% { box-shadow: 0 0 20px var(--color-primary); }
+}
+
+@keyframes cyber-scan {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
+}
+
+.flicker {
+  animation: flicker 2s infinite;
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s infinite;
+}
+
+.cyber-scan {
+  background: linear-gradient(45deg, 
+    transparent 0%, 
+    rgba(147, 51, 234, 0.1) 50%, 
+    transparent 100%
+  );
+  background-size: 200% 200%;
+  animation: cyber-scan 3s infinite linear;
+}
