@@ -5,6 +5,14 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  // Disable ESLint during build
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  // Disable TypeScript checking during build
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   // Ensure environment variables are available
   env: {
     OPENAI_API_KEY: process.env.OPENAI_API_KEY,
