@@ -41,8 +41,8 @@ export function SubmissionForm() {
     if (!formData.appLink.trim()) newErrors.appLink = "App link is required";
     if (!formData.videoLink.trim()) newErrors.videoLink = "Video link is required";
     if (!formData.description.trim()) newErrors.description = "Description is required";
-    if (formData.duration <= 0 || formData.duration > 60) newErrors.duration = "Duration must be between 1 and 60 minutes";
-    if (!formData.agreeToRules) newErrors.agreeToRules = "You must agree to the rules";
+    if (formData.duration <= 0 || formData.duration > 60) newErrors.duration = 0; // Error with duration
+    if (!formData.agreeToRules) newErrors.agreeToRules = false; // Error with rules agreement
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;

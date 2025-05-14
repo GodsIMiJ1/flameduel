@@ -9,7 +9,7 @@ export interface Duel {
   description?: string;
   appLink?: string;
   submissionVideoLink?: string;
-  challengeType?: "web" | "mobile" | "ai" | "game" | "other";
+  challengeType?: "web" | "mobile" | "ai" | "game" | "open" | "other";
   duration?: number; // in minutes
   noShowReason?: string; // only for no-shows
 }

@@ -16,7 +16,11 @@ export default function DuelPage() {
 
   useEffect(() => {
     // Add some example roasts when the page loads
-    const addToast = (window as any).addToast;
+    // Use a type-safe approach to access the window object
+    const addToast = typeof window !== 'undefined' ?
+      (window as Window & { addToast?: (message: string, type: string, duration: number) => void }).addToast :
+      undefined;
+
     if (addToast) {
       setTimeout(() => {
         addToast("That variable naming is criminal! Did you learn to code from a cereal box?", "roast", 8000);
